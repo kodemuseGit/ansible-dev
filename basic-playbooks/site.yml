@@ -1,0 +1,32 @@
+---
+- name: Create a new Demo EC2 instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+      region: us-east-2
+      instance_type: t2.nano
+      ami: ami-0653e888ec96eab9b  # Ubuntu 16.04 LTS
+      keypair: JenkinSetup # pem file name
+  
+  tasks:
+
+    - name: Create an ec2 instance
+      ec2:
+         aws_access_key: AKIAIIMYCIQBMUQVKJIQ
+         aws_secret_key: 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
+         key_name: "{{ keypair }}"
+         group: launch-wizard-1  # security group name
+         instance_type: "{{ instance_type}}"
+         image: "{{ ami }}"
+         wait: true
+         region: "{{ region }}"
+         count: 1  # default
+         count_tag:
+            Name: Demo
+         instance_tags:
+            Name: Demo
+         vpc_subnet_id: subnet-6e775d06
+         assign_public_ip: yes
+      register: ec2

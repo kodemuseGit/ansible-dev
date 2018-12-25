@@ -1,0 +1,20 @@
+---
+- name: Create a sandbox instance
+  hosts: localhost
+  gather_facts: False
+  connection: local
+  
+  vars:
+    keypair: JenkinSetup
+    instance_type: t2.nano
+    ami: ami-0653e888ec96eab9b
+    region: us-east-2
+    security_group: demo-wizard
+    aws_access_key: AKIAIIMYCIQBMUQVKJIQ
+    aws_secret_key: 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
+  
+  
+    
+        
+    
+
