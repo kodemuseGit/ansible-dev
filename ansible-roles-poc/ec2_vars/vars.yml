@@ -1,0 +1,16 @@
+ec2_keypair: JenkinSetup
+ec2_security_group: TestGroup
+ec2_instance_type: t2.nano
+ec2_image: ami-0653e888ec96eab9b
+ec2_region: us-east-2
+ec2_tag_Name: Testserver
+ec2_tag_Type: Testserver
+ec2_tag_Environment: test
+ec2_volume_size: 16
+wait_for_port: 22
+ec2_access_key: AKIAIIMYCIQBMUQVKJIQ
+ec2_secret_key: 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
+ec2_instance_count: 3
+aws_access_key: AKIAIIMYCIQBMUQVKJIQ
+aws_secret_key: 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
+ec2_subnet_ids: subnet-2664045c
